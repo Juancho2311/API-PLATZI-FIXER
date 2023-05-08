@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TrabajoFinal</title>
+    <link rel="stylesheet" href="css/bootstrap.css">
+    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="js/bootstrap.css">
+</head>
+
+<body onload="mostrarCategoria()" style="background-image: url(https://i.pinimg.com/474x/07/7e/be/077ebe5bc87d23977029cd37aa279e88.jpg);">
+
+    <!-- barra superios -->
+    <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg bg-body-tertiary">
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <a  style="text-decoration: none;" href="Inicio.html">
+                        <h1 style="color: yellowgreen;">Tienda</h1>
+                    </a>
+                </ul>
+                <input id="Buscar" placeholder="Busca tu producto">
+                <button class="btn btn-success mx-2" onclick="BusqProd()">Buscar</button>
+                
+                <!-- boton de offcanvas -->
+                <button class="btn btn-success" type="button" data-bs-toggle="offcanvas"
+                    data-bs-target="#offcanvasRight" aria-controls="offcanvasRight"
+                    onclick="mostraCarrito()">Carrito</button>
+            </div>
+
+        </nav>
+        <!-- impresion de productos -->
+        <section onclick="traerProducto()" id="categoria" class="row"
+            style="display: flex; justify-content: center; margin-top: 30px;"></section>
+
+        <section id="producto" class="row" display: flex; justify-content: center;"></section>
+        <section id="card" class="row" style="display: flex; justify-content: center;"></section>
+
+
+        <!-- offcanvas -->
+        <div class="offcanvas offcanvas-end" tabindex="-1" id="offcanvasRight" aria-labelledby="offcanvasRightLabel">
+            <div class="offcanvas-header">
+                <h5 class="offcanvas-title" id="offcanvasRightLabel">Carrito de Compras</h5>
+                <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"
+                    onclick="mostraCarrito()"></button>
+            </div>
+            <!-- apartado de las divisas -->
+            <div class="offcanvas-body" style="background-color: rgb(204, 241, 219);">
+                <select class="form-select" id="escogerDiv" onchange="cambioD()" aria-label="Default select example">
+                    <option selected>USD</option>
+                    <option value="COP">COP</option>
+                    <option value="EUR">EUR</option>
+                    <option value="JPY">JPY</option>
+                    <option value="GBP">GBP</option>
+                    <option value="AUD">AUD</option>
+                    <option value="CAD">CAD</option>
+                </select>
+                <ul id="car"></ul>
+            </div>
+            <!-- apartado de total de precio -->
+            <div class="offcanvas-bottom d-flex" style="border-top: 1px solid black; height: 10%;">
+                <h6>Total a pagar: </h6>
+                <h7 id="total"></h7>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"
+        integrity="sha384-oBqDVmMz9ATKxIep9tiCxS/Z9fNfEXiDAYTujMAeBAsjFuCZSmKbSSUnQlmh/jp3"
+        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.min.js"
+        integrity="sha384-mQ93GR66B00ZXjt0YO5KlohRA5SY2XofN4zfuZxLkoj1gXtW8ANNCe9d5Y3eG5eD"
+        crossorigin="anonymous"></script>
+</body>
+<script src="js/Inicio.js"></script>
+<script src="js/Categorias.js"></script>
+
+</html>
